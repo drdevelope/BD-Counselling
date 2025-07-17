@@ -170,39 +170,39 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab }) => {
   ];
 
   return (
-    <div className="flex-1 bg-gradient-to-br from-rose-50 via-blue-50 to-indigo-50 min-h-screen overflow-y-auto">
+    <div className="flex-1 bg-gradient-to-br from-rose-50 via-blue-50 to-indigo-50 min-h-screen overflow-y-auto px-2 sm:px-4 lg:px-0">
       {/* Mobile-First Hero Section */}
-      <div className="bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 px-4 lg:px-6 py-6 lg:py-12 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-12 relative overflow-hidden mx-2 sm:mx-0 rounded-xl sm:rounded-none mt-2 sm:mt-0">
         <div className="absolute inset-0 bg-black/5"></div>
         <div className="relative max-w-7xl mx-auto">
           {/* Mobile Layout */}
-          <div className="xl:hidden text-center">
+          <div className="xl:hidden text-center px-2">
             <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-2xl mb-4 backdrop-blur-sm">
               <span className="text-white text-2xl">⚡</span>
             </div>
-            <h1 className="text-xl font-bold text-white mb-2">
+            <h1 className="text-lg sm:text-xl font-bold text-white mb-2 leading-tight">
               All India Counselling - UG Medical
             </h1>
-            <p className="text-orange-100 mb-6 text-sm">Central • All India</p>
+            <p className="text-orange-100 mb-4 sm:mb-6 text-xs sm:text-sm">Central • All India</p>
 
-            <div className="grid grid-cols-2 gap-3 mb-6">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6 max-w-sm mx-auto">
               {actionButtons.map((button) => (
                 <button
                   key={button.id}
-                  className={`flex flex-col items-center space-y-2 p-4 rounded-2xl transition-all duration-300 hover:shadow-xl transform hover:scale-105 ${button.bgColor} ${button.textColor}`}
+                  className={`flex flex-col items-center space-y-1 sm:space-y-2 p-2 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 hover:shadow-xl transform hover:scale-105 ${button.bgColor} ${button.textColor}`}
                 >
-                  <button.icon className="w-6 h-6" />
-                  <span className="text-sm font-medium">{button.label}</span>
+                  <button.icon className="w-4 h-4 sm:w-6 sm:h-6" />
+                  <span className="text-xs sm:text-sm font-medium">{button.label}</span>
                 </button>
               ))}
             </div>
 
-            <div className="flex justify-center space-x-3">
-              <button className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-                <MessageCircle className="w-6 h-6" />
+            <div className="flex justify-center space-x-2 sm:space-x-3">
+              <button className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                <MessageCircle className="w-4 h-4 sm:w-6 sm:h-6" />
               </button>
-              <button className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-                <Send className="w-6 h-6" />
+              <button className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                <Send className="w-4 h-4 sm:w-6 sm:h-6" />
               </button>
             </div>
           </div>
@@ -243,28 +243,28 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab }) => {
         </div>
       </div>
 
-      <div className="px-4 lg:px-6 py-6 lg:py-8 max-w-7xl mx-auto">
+      <div className="px-2 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 max-w-7xl mx-auto">
         {/* Mobile-First Quick Action Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-8 lg:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 lg:mb-12">
           {quickActionCards.map((card, index) => (
             <div
               key={index}
-              className={`bg-gradient-to-r ${card.bgGradient} rounded-2xl lg:rounded-3xl p-6 lg:p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105`}
+              className={`bg-gradient-to-r ${card.bgGradient} rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105`}
             >
               <div className="flex items-center justify-between mb-4">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                  <card.icon className="w-6 h-6 lg:w-8 lg:h-8" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                  <card.icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
                 </div>
-                <ExternalLink className="w-5 h-5 opacity-70" />
+                <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 opacity-70" />
               </div>
-              <h3 className="text-lg lg:text-xl font-bold mb-2">
+              <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2">
                 {card.title}
               </h3>
-              <p className="text-white/80 mb-4 text-sm lg:text-base">
+              <p className="text-white/80 mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base">
                 {card.subtitle}
               </p>
               <button
-                className="bg-white/20 backdrop-blur-sm px-4 py-2 lg:px-6 lg:py-3 rounded-lg lg:rounded-xl hover:bg-white/30 transition-all duration-200 font-medium text-sm lg:text-base"
+                className="bg-white/20 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-2 lg:px-6 lg:py-3 rounded-lg lg:rounded-xl hover:bg-white/30 transition-all duration-200 font-medium text-xs sm:text-sm lg:text-base"
                 onClick={card.onClick}
               >
                 {card.action}
@@ -274,53 +274,53 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab }) => {
         </div>
 
         {/* Mobile-First Data Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6 mb-8 lg:mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-6 mb-6 sm:mb-8 lg:mb-12">
           {dataCards.map((card, index) => (
             <div
               key={index}
-              className="bg-white/80 backdrop-blur-xl rounded-2xl p-4 lg:p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="bg-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <div
-                className={`w-10 h-10 lg:w-12 lg:h-12 ${card.color} rounded-xl flex items-center justify-center mb-3 lg:mb-4`}
+                className={`w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 ${card.color} rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-3 lg:mb-4`}
               >
-                <card.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+                <card.icon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
-              <h3 className="font-bold text-slate-800 mb-1 text-sm lg:text-base">
+              <h3 className="font-bold text-slate-800 mb-1 text-xs sm:text-sm lg:text-base">
                 {card.title}
               </h3>
-              <p className="text-xs lg:text-sm text-slate-600">
+              <p className="text-xs sm:text-xs lg:text-sm text-slate-600">
                 {card.subtitle}
               </p>
-              <ChevronRight className="w-4 h-4 text-slate-400 mt-2" />
+              <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-slate-400 mt-1 sm:mt-2" />
             </div>
           ))}
         </div>
 
         {/* NEET UG 2024 vs 2025 Statistics - Mobile Optimized */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-2xl lg:rounded-3xl shadow-xl p-6 lg:p-8 mb-8 lg:mb-12 border border-white/20">
-          <div className="text-center mb-6 lg:mb-8">
-            <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2">
+        <div className="bg-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 lg:mb-12 border border-white/20">
+          <div className="text-center mb-4 sm:mb-6 lg:mb-8">
+            <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-slate-800 mb-2">
               NEET UG 2024 vs 2025
             </h2>
-            <p className="text-slate-600 text-sm lg:text-base">
+            <p className="text-slate-600 text-xs sm:text-sm lg:text-base">
               Comprehensive statistics comparison
             </p>
           </div>
 
-          <div className="grid grid-cols-3 lg:grid-cols-3 gap-3 lg:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-6">
             {neetStats.map((stat, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-xl lg:rounded-2xl p-3 lg:p-6 border border-slate-200/50 hover:shadow-lg transition-all duration-300"
+                className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-3 lg:p-6 border border-slate-200/50 hover:shadow-lg transition-all duration-300"
               >
                 <div className="text-center">
-                  <div className="text-lg lg:text-3xl font-bold text-slate-800 mb-1 lg:mb-2">
+                  <div className="text-sm sm:text-lg lg:text-3xl font-bold text-slate-800 mb-1 lg:mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-slate-600 font-medium mb-1 text-xs lg:text-sm">
+                  <div className="text-slate-600 font-medium mb-1 text-xs sm:text-xs lg:text-sm">
                     {stat.label}
                   </div>
-                  <div className="text-xs lg:text-sm text-blue-600 font-medium">
+                  <div className="text-xs sm:text-xs lg:text-sm text-blue-600 font-medium">
                     {stat.year}
                   </div>
                 </div>
@@ -332,16 +332,16 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab }) => {
         <div>
           <NeetComparison />
           {/* How to Check NEET Result 2025 - Mobile Optimized */}
-          <div className="bg-white/80 backdrop-blur-xl rounded-2xl lg:rounded-3xl shadow-xl p-6 lg:p-8 mb-8 lg:mb-12 border border-white/20">
-            <div className="flex items-start space-x-3 lg:space-x-4 mb-4 lg:mb-6">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <FileText className="w-5 h-5 lg:w-6 lg:h-6 text-blue-600" />
+          <div className="bg-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 lg:mb-12 border border-white/20">
+            <div className="flex items-start space-x-2 sm:space-x-3 lg:space-x-4 mb-3 sm:mb-4 lg:mb-6">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-blue-100 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-lg lg:text-2xl font-bold text-slate-800 mb-2">
+                <h3 className="text-base sm:text-lg lg:text-2xl font-bold text-slate-800 mb-1 sm:mb-2">
                   How to Check NEET Result 2025?
                 </h3>
-                <p className="text-slate-600 text-sm lg:text-base">
+                <p className="text-slate-600 text-xs sm:text-sm lg:text-base">
                   Candidates have to check their NEET 2025 result and download
                   the scorecards in online mode by following the steps given
                   below.
@@ -349,7 +349,7 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab }) => {
               </div>
             </div>
 
-            <div className="space-y-3 lg:space-y-4">
+            <div className="space-y-2 sm:space-y-3 lg:space-y-4">
               {[
                 "Visit the official website of NEET 2025 – www.neet.nta.nic.in or directly enter the link",
                 "Click on the link indicating NEET 2025 Scorecard Download",
@@ -358,12 +358,12 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab }) => {
                 "NEET 2025 scorecard will be displayed on the screen",
                 "Download and print the NEET scorecard for future reference",
               ].map((step, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold mt-0.5 flex-shrink-0">
+                <div key={index} className="flex items-start space-x-2 sm:space-x-3">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold mt-0.5 flex-shrink-0">
                     {index + 1}
                   </div>
                   <div>
-                    <p className="text-slate-700 text-sm lg:text-base">
+                    <p className="text-slate-700 text-xs sm:text-sm lg:text-base">
                       {step}
                     </p>
                   </div>
@@ -374,18 +374,18 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab }) => {
         </div>
 
         {/* Counselling Timeline - Mobile Optimized */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-2xl lg:rounded-3xl shadow-xl p-6 lg:p-8 border border-white/20 mb-8 lg:mb-12">
-          <h3 className="text-xl lg:text-2xl font-bold text-slate-800 mb-6 lg:mb-8 text-center">
+        <div className="bg-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 border border-white/20 mb-6 sm:mb-8 lg:mb-12">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800 mb-4 sm:mb-6 lg:mb-8 text-center">
             Counselling Timeline 2025
           </h3>
 
           <div className="relative">
             {/* Mobile Timeline */}
-            <div className="xl:hidden space-y-6">
+            <div className="xl:hidden space-y-3 sm:space-y-6">
               {timelineSteps.map((step, index) => (
-                <div key={index} className="flex items-start space-x-4">
+                <div key={index} className="flex items-start space-x-3 sm:space-x-4">
                   <div
-                    className={`w-6 h-6 rounded-full flex-shrink-0 ${
+                    className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex-shrink-0 ${
                       step.status === "completed"
                         ? "bg-green-400"
                         : step.status === "current"
@@ -393,14 +393,14 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab }) => {
                         : "bg-slate-300"
                     }`}
                   ></div>
-                  <div className="bg-slate-50 rounded-xl p-4 flex-1">
-                    <div className="text-sm text-blue-600 font-medium mb-1">
+                  <div className="bg-slate-50 rounded-lg sm:rounded-xl p-3 sm:p-4 flex-1">
+                    <div className="text-xs sm:text-sm text-blue-600 font-medium mb-1">
                       {step.date}
                     </div>
-                    <div className="text-base font-bold text-slate-800 mb-1">
+                    <div className="text-sm sm:text-base font-bold text-slate-800 mb-1">
                       {step.title}
                     </div>
-                    <div className="text-sm text-slate-600">
+                    <div className="text-xs sm:text-sm text-slate-600">
                       {step.subtitle}
                     </div>
                   </div>
@@ -446,12 +446,12 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab }) => {
         </div>
 
         {/* Career Guidance CTA - Mobile Optimized */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl lg:rounded-3xl p-6 lg:p-8 text-center text-white shadow-2xl">
-          <h3 className="text-xl lg:text-3xl font-bold mb-3 lg:mb-4">
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 text-center text-white shadow-2xl">
+          <h3 className="text-lg sm:text-xl lg:text-3xl font-bold mb-2 sm:mb-3 lg:mb-4">
             Still <span className="text-pink-300">Confused?</span> Get Your
             Career Guidance Today!!!
           </h3>
-          <p className="text-blue-100 mb-4 lg:mb-6 text-sm lg:text-lg">
+          <p className="text-blue-100 mb-3 sm:mb-4 lg:mb-6 text-xs sm:text-sm lg:text-lg">
             Don't count the ranks. Count the lives you'll impact with expert
             medical career guidance.
           </p>
@@ -459,19 +459,7 @@ const MainContent: React.FC<MainContentProps> = ({ activeTab }) => {
             href="https://forms.gle/HE2RyX5CLh7j9FzX9"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/80 backdrop-blur-xl rounded-2xl p-4 lg:p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
-            onClick={() => {
-              // NEW COMMIT: Add navigation to data pages
-              if (card.title === "Allotments") {
-                window.location.href = "/allotments";
-              } else if (card.title === "Closing Ranks") {
-                window.location.href = "/closing-ranks";
-              } else if (card.title === "Seat Matrix") {
-                window.location.href = "/seat-matrix";
-              } else if (card.title === "Fee, Stipend & Bond") {
-                window.location.href = "/fee-stipend-bond";
-              }
-            }}
+            className="inline-block bg-white/20 backdrop-blur-sm px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-lg sm:rounded-xl text-white font-bold text-sm sm:text-base lg:text-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-105 shadow-xl"
           >
             Click Here for Free Consultation
           </a>

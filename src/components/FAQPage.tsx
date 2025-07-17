@@ -29,7 +29,7 @@ interface FAQItem {
  */
 const FAQPage: React.FC<FAQPageProps> = ({ onBack }) => {
   // State for managing expanded FAQ items
-  const [expandedItems, setExpandedItems] = useState<number[]>([]);
+  const [expandedItem, setExpandedItem] = useState<number | null>(null);
   // State for search functionality
   const [searchTerm, setSearchTerm] = useState("");
   // State for category filtering
@@ -308,13 +308,11 @@ Ensure all details are correct before submission.`,
 
   /**
    * Toggle FAQ item expansion
-   * FIXED: Proper toggle behavior - only affects the clicked item
+   * FIXED: Only one item can be expanded at a time
    * @param id - FAQ item ID to toggle
    */
   const toggleExpanded = (id: number) => {
-    setExpandedItems((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
+    setExpandedItem(expandedItem === id ? null : id);
   };
 
   /**
@@ -424,11 +422,13 @@ Ensure all details are correct before submission.`,
         </div>
 
         {/* FAQ Items - FIXED: Proper grid layout and expansion behavior */}
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {filteredFAQs.map((faq) => (
             <div
               key={faq.id}
-              className="bg-white/80 backdrop-blur-xl rounded-xl md:rounded-2xl border border-white/20 shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+              className={`bg-white/80 backdrop-blur-xl rounded-xl md:rounded-2xl border border-white/20 shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl ${
+                expandedItem === faq.id ? 'md:col-span-2' : ''
+              }`}
             >
               <button
                 onClick={() => toggleExpanded(faq.id)}
@@ -444,7 +444,7 @@ Ensure all details are correct before submission.`,
                   </span>
                 </div>
                 <div className="ml-4 flex-shrink-0">
-                  {expandedItems.includes(faq.id) ? (
+                  {expandedItem === faq.id ? (
                     <ChevronUp className="w-5 h-5 md:w-6 md:h-6 text-slate-600" />
                   ) : (
                     <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-slate-600" />
@@ -453,7 +453,7 @@ Ensure all details are correct before submission.`,
               </button>
 
               {/* Expandable Answer - FIXED: Proper conditional rendering */}
-              {expandedItems.includes(faq.id) && (
+              {expandedItem === faq.id && (
                 <div className="px-4 md:px-6 pb-4 md:pb-6 border-t border-slate-200/50">
                   <div className="pt-4">
                     <div className="text-slate-700 leading-relaxed text-sm md:text-base">
