@@ -148,6 +148,23 @@ select:focus-visible {
   .space-responsive > * + * {
     margin-left: 0.5rem;
   }
+  
+  /* Mobile-specific FAQ improvements */
+  .faq-mobile {
+    padding: 1rem;
+  }
+  
+  .faq-mobile .faq-item {
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Mobile navigation improvements */
+  .mobile-nav-item {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* Dark mode support (future enhancement) */

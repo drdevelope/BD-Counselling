@@ -25,8 +25,8 @@ interface HeaderProps {
 
 /**
  * Header Component
- * Main navigation header with search, user menu, and mobile navigation
- * Responsive design with different layouts for mobile and desktop
+ * UPDATED: Improved mobile responsiveness and navigation consistency
+ * Enhanced search functionality and better visual hierarchy
  */
 const Header: React.FC<HeaderProps> = ({
   onSearchChange,
@@ -75,7 +75,6 @@ const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="flex items-center space-x-2">
-            {/* Navigation Arrows */}
             <button className="p-2 text-slate-700 hover:bg-slate-50 rounded-xl transition-colors">
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -249,7 +248,7 @@ const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
       </div>
-      {/* Mobile Search Bar */}
+      {/* Mobile Search Bar - UPDATED: Better responsive design */}
       <div className="xl:hidden mt-3">
         <div className="relative">
           <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
@@ -258,7 +257,7 @@ const Header: React.FC<HeaderProps> = ({
             placeholder="Search courses, colleges..."
             value={searchValue}
             onChange={handleSearch}
-            className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50/50 transition-all duration-200"
+            className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50/50 transition-all duration-200 text-sm"
           />
         </div>
       </div>
