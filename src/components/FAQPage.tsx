@@ -422,17 +422,17 @@ Ensure all details are correct before submission.`,
         </div>
 
         {/* FAQ Items - FIXED: Proper grid layout and expansion behavior */}
-        <div className="space-y-4 md:space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {filteredFAQs.map((faq) => (
             <div
               key={faq.id}
-              className="bg-white/80 backdrop-blur-xl rounded-xl md:rounded-2xl border border-white/20 shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+              className="bg-white/80 backdrop-blur-xl rounded-xl md:rounded-2xl border border-white/20 shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col"
             >
               <button
                 onClick={() => toggleExpanded(faq.id)}
-                className="w-full p-4 md:p-6 text-left flex items-center justify-between hover:bg-slate-50/50 transition-colors"
+                className="w-full p-4 md:p-6 text-left flex items-start justify-between hover:bg-slate-50/50 transition-colors flex-shrink-0"
               >
-                <div className="flex-1 pr-4">
+                <div className="flex-1 pr-2">
                   <h3 className="text-base md:text-lg font-semibold text-slate-800 mb-2">
                     {faq.question}
                   </h3>
@@ -441,18 +441,18 @@ Ensure all details are correct before submission.`,
                       "General"}
                   </span>
                 </div>
-                <div className="ml-4 flex-shrink-0">
+                <div className="ml-2 flex-shrink-0 mt-1">
                   {expandedItem === faq.id ? (
-                    <ChevronUp className="w-5 h-5 md:w-6 md:h-6 text-slate-600" />
+                    <ChevronUp className="w-5 h-5 text-slate-600" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-slate-600" />
+                    <ChevronDown className="w-5 h-5 text-slate-600" />
                   )}
                 </div>
               </button>
 
               {/* Expandable Answer - FIXED: Proper conditional rendering */}
               {expandedItem === faq.id && (
-                <div className="px-4 md:px-6 pb-4 md:pb-6 border-t border-slate-200/50 animate-in slide-in-from-top-2">
+                <div className="px-4 md:px-6 pb-4 md:pb-6 border-t border-slate-200/50 animate-in slide-in-from-top-2 flex-grow">
                   <div className="pt-4">
                     <div className="text-slate-700 leading-relaxed text-sm md:text-base">
                       {formatAnswer(faq.answer)}
