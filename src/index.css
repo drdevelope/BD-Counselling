@@ -244,24 +244,3 @@ select:focus-visible {
 }
 
 /* FAQ Grid Layout Fix */
-.faq-grid-item {
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-  align-self: start;
-}
-
-/* Ensure FAQ items don't affect each other */
-.faq-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  align-items: start;
-}
-
-@media (max-width: 768px) {
-  .faq-container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
