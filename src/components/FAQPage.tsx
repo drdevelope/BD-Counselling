@@ -422,13 +422,11 @@ Ensure all details are correct before submission.`,
         </div>
 
         {/* FAQ Items - FIXED: Proper grid layout and expansion behavior */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div className="space-y-4 md:space-y-6">
           {filteredFAQs.map((faq) => (
             <div
               key={faq.id}
-              className={`bg-white/80 backdrop-blur-xl rounded-xl md:rounded-2xl border border-white/20 shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl ${
-                expandedItem === faq.id ? 'md:col-span-2' : ''
-              }`}
+              className="bg-white/80 backdrop-blur-xl rounded-xl md:rounded-2xl border border-white/20 shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
             >
               <button
                 onClick={() => toggleExpanded(faq.id)}
@@ -454,7 +452,7 @@ Ensure all details are correct before submission.`,
 
               {/* Expandable Answer - FIXED: Proper conditional rendering */}
               {expandedItem === faq.id && (
-                <div className="px-4 md:px-6 pb-4 md:pb-6 border-t border-slate-200/50">
+                <div className="px-4 md:px-6 pb-4 md:pb-6 border-t border-slate-200/50 animate-in slide-in-from-top-2">
                   <div className="pt-4">
                     <div className="text-slate-700 leading-relaxed text-sm md:text-base">
                       {formatAnswer(faq.answer)}
